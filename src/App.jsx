@@ -7,6 +7,7 @@ import LoginView from "./views/LoginView";
 import HomeView from "./views/HomeView";
 import NotPage404 from "./views/NotPage404";
 import LogoutView from "./views/LogoutView";
+import PrivateRoute from "./components/PrivateRoute";
 import "./App.css";
 
 const appOptions = [
@@ -24,6 +25,12 @@ const appOptions = [
     title: "Logout",
     to: "logout",
   },
+
+  {
+    title: "Perfil",
+    to: "perfil",
+  },
+
 ];
 
 function App() {
@@ -36,7 +43,11 @@ function App() {
               <Route path="" element={<HomeView />} />
               <Route path="login" element={<LoginView />} />
               <Route path="logout" element={<LogoutView />} />
-              <Route path="perfil" element={<div>Perfil</div>} />
+              <Route path="perfil" element={
+                <PrivateRoute>
+                  <div>Perfil</div>
+                </PrivateRoute>
+              } />
               <Route path="*" element={<NotPage404 />} />
             </Route>
           </Routes>

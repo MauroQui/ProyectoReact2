@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { logout } from "../reducers/authReducer"; //cambiar por reducers authredecers
+import { logout } from "../reducers/authReducer"; 
 
 const NavBar = () => {
     const dispatch  = useDispatch();
@@ -14,7 +14,7 @@ const NavBar = () => {
             <ul>
                 <li>Enlace 1</li>
                 <li>Enlace 2</li>
-                <li onClick={handleLogout}>Cerrar Sesion</li> {/*aqui implementar funcion logout*/}
+                <li onClick={handleLogout}>Cerrar Sesion</li> 
             </ul>
         </nav>
     )
