@@ -1,17 +1,19 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector} from "react-redux";
 import { login } from "../reducers/authReducer";   
 
 
 const LoginView = () => {
    
-   const dispatch = useDispatch(); 
-
-   const [form, setForm] = useState ({
+    const [form, setForm] = useState ({
     username: "",
     password: "",
    })
 
+   const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
+   
+   const dispatch = useDispatch();
+   
    const HandleLogin = (evento) => {
     evento.preventDefault();
     console.log("Login");
@@ -33,28 +35,34 @@ const LoginView = () => {
     return(
         <div>
             <h1>Iniciar Sesión</h1>
-            <p>Ingrese sus datos de usuario a continuación</p>
-            <form onSubmit={HandleLogin}>
-                <input 
-                    type="text"
-                    name="username"
-                    placeholder="Ingrese nombre de usuario"
-                    value={form.username}
-                    onChange={handleFormChange}
-                />
-                <br />
-                <br />
-                <input 
-                    type="password"
-                    name="password"
-                    placeholder="Ingrese Contraseña"
-                    value={form.password}
-                    onChange={handleFormChange}    
-                />
-                <br />
-                <br />
-                <button type="submit">Login</button>
-            </form>
+            {isAuthenticated ? (
+                <p>Ahora estas autenticado!</p>
+            ) : (    
+                <>
+                <p>Ingrese sus datos de usuario a continuación</p>
+                <form onSubmit={HandleLogin}>
+                    <input 
+                        type="text"
+                        name="username"
+                        placeholder="Ingrese nombre de usuario"
+                        value={form.username}
+                        onChange={handleFormChange}
+                    />
+                    <br />
+                    <br />
+                    <input 
+                        type="password"
+                        name="password"
+                        placeholder="Ingrese Contraseña"
+                        value={form.password}
+                        onChange={handleFormChange}    
+                    />
+                    <br />
+                    <br />
+                    <button type="submit">Login</button>
+                </form>
+                </>
+            )}
         </div>
     )
 }

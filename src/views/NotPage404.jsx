@@ -4,7 +4,7 @@ const NotPage404 = () => {
     return (
         <div>
             <h1>Error 404: Página no Encontrada</h1>
-            <h3>Rectifica la ruta a la cual deseas ingresar</h3>
+            <h3>La página ingresada no exite, rectifica la ruta!</h3>
         </div>
     )
 }
