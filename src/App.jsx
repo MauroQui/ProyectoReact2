@@ -6,6 +6,7 @@ import Layout from "./components/Layout";
 import LoginView from "./views/LoginView";
 import HomeView from "./views/HomeView";
 import NotPage404 from "./views/NotPage404";
+import LogoutView from "./views/LogoutView";
 import "./App.css";
 
 const appOptions = [
@@ -18,6 +19,11 @@ const appOptions = [
     title: "Login",
     to: "login",
   },
+
+  {
+    title: "Logout",
+    to: "logout",
+  },
 ];
 
 function App() {
@@ -29,6 +35,7 @@ function App() {
             <Route path="/" element={<Layout options={appOptions} />}>
               <Route path="" element={<HomeView />} />
               <Route path="login" element={<LoginView />} />
+              <Route path="logout" element={<LogoutView />} />
               <Route path="perfil" element={<div>Perfil</div>} />
               <Route path="*" element={<NotPage404 />} />
             </Route>
