@@ -4,7 +4,7 @@ const HomeView = () => {
     return (
         <div>
             <h1>Home</h1>
-            <p>Bienvenido a la pagina principal</p>
+            <h2>Bienvenido a la pagina principal</h2>
         </div>
     )
 }

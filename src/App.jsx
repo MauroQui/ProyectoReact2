@@ -45,7 +45,10 @@ function App() {
               <Route path="logout" element={<LogoutView />} />
               <Route path="perfil" element={
                 <PrivateRoute>
-                  <div>Perfil</div>
+                  <div>
+                    <h1>Perfil</h1>
+                    <h2>Estas en tu perfil!</h2>                    
+                  </div>
                 </PrivateRoute>
               } />
               <Route path="*" element={<NotPage404 />} />

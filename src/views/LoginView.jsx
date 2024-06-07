@@ -36,10 +36,10 @@ const LoginView = () => {
         <div>
             <h1>Iniciar Sesión</h1>
             {isAuthenticated ? (
-                <p>Ahora estas autenticado!</p>
+                <h2>Ahora estas autenticado!</h2>
             ) : (    
                 <>
-                <p>Ingrese sus datos de usuario a continuación</p>
+                <h2>Ingrese sus datos de usuario a continuación</h2>
                 <form onSubmit={HandleLogin}>
                     <input 
                         type="text"
